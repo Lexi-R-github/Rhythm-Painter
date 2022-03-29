@@ -280,6 +280,9 @@ MonoBehaviour:
   dotPrefab: {fileID: 567228183988513402, guid: 6adf246b0a08ba0419e26ae3d6694781,
     type: 3}
   dotAmount: 100
+  linePrefab: {fileID: 3523805137970204330, guid: 472fac0baf307b14da8695366d7ea9d3,
+    type: 3}
+  lineAmount: 50
 --- !u!4 &1146722155
 Transform:
   m_ObjectHideFlags: 0

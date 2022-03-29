@@ -21,4 +21,8 @@ public class Player : MonoBehaviour
             dot.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
         }
     }
+
+    void OnMouseDrag() {
+        
+    }
 }
