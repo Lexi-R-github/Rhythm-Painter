@@ -8,7 +8,7 @@ public class Level : MonoBehaviour
     SpriteRenderer spriteRenderer;
     void Start()
     {
-        spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = Resources.Load<Sprite>("Audio/inabakumori-Lagtrain/Cover");
         spriteRenderer.color = new Color(75f/255f,75f/255f,75f/255f);
         audioSource = GetComponentInChildren<AudioSource>();

@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    public class Point {
-        float x;
-        float y;
-        public Point(float x, float y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-    List<Point> points = new List<Point>();
+    private LineRenderer lineRenderer;
+    private int index = 0;
     // Start is called before the first frame update
-    void Start()
+    void Start() {
+    }
+    void OnEnable()
     {
-        
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, transform.position);
     }
 
     // Update is called once per frame
@@ -25,7 +24,10 @@ public class Line : MonoBehaviour
         
     }
 
-    void trace(float x, float y) {
-        points.Add(new Point(x,y));
+    public void trace() {
+        if(index > lineRenderer.positionCount-1) lineRenderer.positionCount++;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        lineRenderer.SetPosition(index, new Vector3(mousePos.x, mousePos.y, 0));
+        index++;
     }
 }
